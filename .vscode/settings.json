@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "opng.sln"
+    "dotnet.defaultSolution": "Pong-TrabalhoA3.sln"
 }

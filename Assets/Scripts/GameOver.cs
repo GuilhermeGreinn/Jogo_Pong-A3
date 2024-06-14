@@ -31,10 +31,21 @@ public class GameOverManager : MonoBehaviour
         {
             RestartGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            QuitGame();
+        }
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
     }
 }
