@@ -255,10 +255,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83171e3274e214227afffd99b2f69f33, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d10a880088c1b6e41aab877216fa86d1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.2
+  m_Pitch: 1.3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -353,8 +353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1be0d7097cc52a43be55d51670d08b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MultiplicadorDificuldade: 2
-  minXSpeed: 2
-  maxXSpeed: 4
-  minYSpeed: 2
-  maxYSpeed: 4
+  MultiplicadorDificuldade: 3
+  minXSpeed: 3
+  maxXSpeed: 5
+  minYSpeed: 3
+  maxYSpeed: 5
+  SFX: {fileID: 6133107895195916351, guid: 4bb27cf694c320c45a72f4d78dd3569d, type: 3}
+  somColisaoRaquete: {fileID: 8300000, guid: d10a880088c1b6e41aab877216fa86d1, type: 3}
+  somColisaoParede: {fileID: 8300000, guid: d10a880088c1b6e41aab877216fa86d1, type: 3}

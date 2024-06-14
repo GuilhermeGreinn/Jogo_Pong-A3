@@ -10,11 +10,17 @@ public class Bola : MonoBehaviour
     public float minYSpeed = 0.8f;
     public float maxYSpeed = 1.2f;
 
+    public GameObject SFX;
+    public AudioClip somColisaoRaquete;
+    public AudioClip somColisaoParede;
+
     private Rigidbody2D rigidbodyBall;
+    private AudioSource audioSource;
 
     void Start()
     {
         rigidbodyBall = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         IniciarMovimento();
     }
 
@@ -36,10 +42,12 @@ public class Bola : MonoBehaviour
             if (other.transform.position.y > transform.position.y && rigidbodyBall.velocity.y > 0)
             {
                 rigidbodyBall.velocity = new Vector2(rigidbodyBall.velocity.x, -rigidbodyBall.velocity.y);
+                PlayCollisionSound(somColisaoParede);
             }
             else if (other.transform.position.y < transform.position.y && rigidbodyBall.velocity.y < 0)
             {
                 rigidbodyBall.velocity = new Vector2(rigidbodyBall.velocity.x, -rigidbodyBall.velocity.y);
+                PlayCollisionSound(somColisaoParede);
             }
         }
 
@@ -48,11 +56,13 @@ public class Bola : MonoBehaviour
             if (other.transform.position.x > transform.position.x && rigidbodyBall.velocity.x > 0)
             {
                 rigidbodyBall.velocity = new Vector2(-rigidbodyBall.velocity.x, rigidbodyBall.velocity.y);
+                PlayCollisionSound(somColisaoRaquete);
             }
 
             if (other.transform.position.x < transform.position.x && rigidbodyBall.velocity.x < 0)
             {
                 rigidbodyBall.velocity = new Vector2(-rigidbodyBall.velocity.x, rigidbodyBall.velocity.y);
+                PlayCollisionSound(somColisaoRaquete);
             }
         }
 
@@ -74,5 +84,13 @@ public class Bola : MonoBehaviour
     {
         transform.position = Vector3.zero;
         IniciarMovimento();
+    }
+
+    void PlayCollisionSound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }
